@@ -59,10 +59,10 @@
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     $(".gallery").on("click", ".mg-prev", () =>
-      $.fn.mauGallery.methods.prevImage(options.lightboxId)
+      $.fn.mauGallery.methods.prevImage(options.lightboxId)/*** fonction avec fleche  gauche ***/
     );
     $(".gallery").on("click", ".mg-next", () =>
-      $.fn.mauGallery.methods.nextImage(options.lightboxId)
+      $.fn.mauGallery.methods.nextImage(options.lightboxId)/*** fonction avec fleche  droite ***/
     );
   };
   $.fn.mauGallery.methods = {
@@ -119,7 +119,7 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
-    prevImage() {
+    prevImage() {/*********************************************prev */
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -157,8 +157,14 @@
         imagesCollection[index] ||
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
+
+      console.log(activeImage)
+      console.log(index)
+      console.log(imagesCollection)
+      console.log(next)
+      
     },
-    nextImage() {
+    nextImage() {/******************************************************next */
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -194,8 +200,13 @@
       });
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
+
+      console.log(activeImage)
+      console.log(index)
+      console.log(imagesCollection)
+      console.log(next)
     },
-    createLightBox(gallery, lightboxId, navigation) {
+    createLightBox(gallery, lightboxId, navigation) {/**************************modale img */
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
       }" tabindex="-1" role="dialog" aria-hidden="true">
@@ -240,7 +251,7 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active active-tag");/*********rajout active devant active */
 
       var tag = $(this).data("images-toggle");
 
