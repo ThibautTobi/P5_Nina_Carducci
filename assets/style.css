@@ -40,6 +40,7 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: 20px;
 }
 
 #about {
@@ -69,7 +70,7 @@ body {
 
 .picture img {
 	width: 100%;
-
+	height: 100%;
 }
 #about-me {
 	flex: 2
@@ -83,6 +84,7 @@ body {
 	font-family: 'Spectral';
 	font-weight: 800;
 	font-style: italic;
+	font-size: calc(1rem + 0.3vw);
 	width: 60%;
 }
 #about-me p {
@@ -102,7 +104,7 @@ body {
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #fff;
-	background-color: #BEB45A;
+	background-color:  #91712C;
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
@@ -201,6 +203,7 @@ body {
 #contact .container {
 	display: flex;
 }
+
 .picture.right::before {
 	content: ' ';
 	background-color: #BEB45A;
